@@ -407,24 +407,24 @@ module.exports = {
 
     // defuzzufikasi (derajat rendah, derajat sedang, derajat tinggi)
     let diskonTotal = function(rd, sd, tg) {
-      if (rd >= tprsy && sd >= tprsy && tg == 0) {
+      if (rd >= tprsy && rd < 1 && sd >= tprsy && sd < 1 && tg == 0) {
         return diskon1;
-      } else if (rd >= tprsy && sd <= tprsy && tg == 0) {
-        return diskon2;
-      } else if (rd <= tprsy && sd >= tprsy && tg == 0) {
-        return diskon3;
-      } else if (rd == 0 && sd >= tpsty && tg >= tpsty) {
-        return diskon4;
-      } else if (rd == 0 && sd >= tpsty && tg <= tpsty) {
-        return diskon5;
-      } else if (rd == 0 && sd <= tpsty && tg >= tpsty) {
-        return diskon6;
       } else if (rd == 1 && sd == 0 && tg == 0) {
         return 0;
       } else if (rd == 0 && sd == 1 && tg == 0) {
         return 15;
       } else if (rd == 0 && sd == 0 && tg == 1) {
         return 30;
+      } else if (rd >= tprsy && rd < 1 && sd <= tprsy && sd < 1 && tg == 0) {
+        return diskon2;
+      } else if (rd <= tprsy && rd < 1 && sd >= tprsy && sd < 1 && tg == 0) {
+        return diskon3;
+      } else if (rd == 0 && sd >= tpsty && sd < 1 && tg >= tpsty && tg < 1) {
+        return diskon4;
+      } else if (rd == 0 && sd >= tpsty && sd < 1 && tg <= tpsty && sd < 1) {
+        return diskon5;
+      } else if (rd == 0 && sd <= tpsty && sd < 1 && tg >= tpsty && sd < 1) {
+        return diskon6;
       }
     };
 
