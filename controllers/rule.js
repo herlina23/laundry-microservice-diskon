@@ -410,11 +410,14 @@ module.exports = {
       if (rd >= tprsy && rd < 1 && sd >= tprsy && sd < 1 && tg == 0) {
         return diskon1;
       } else if (rd == 1 && sd == 0 && tg == 0) {
-        return 0;
+        // return 0;
+        return dr;
       } else if (rd == 0 && sd == 1 && tg == 0) {
-        return 15;
+        // return 15;
+        return ds;
       } else if (rd == 0 && sd == 0 && tg == 1) {
-        return 30;
+        // return 30;
+        return dt;
       } else if (rd >= tprsy && rd < 1 && sd <= tprsy && sd < 1 && tg == 0) {
         return diskon2;
       } else if (rd <= tprsy && rd < 1 && sd >= tprsy && sd < 1 && tg == 0) {
