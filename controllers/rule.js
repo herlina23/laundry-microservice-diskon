@@ -422,6 +422,10 @@ module.exports = {
         return diskon2;
       } else if (rd <= tprsy && rd < 1 && sd >= tprsy && sd < 1 && tg == 0) {
         return diskon3;
+      }
+      // new condition
+      else if (rd <= tprsy || (sd >= tprsy && tg == 0)) {
+        return diskon3;
       } else if (rd == 0 && sd >= tpsty && sd < 1 && tg >= tpsty && tg < 1) {
         return diskon4;
       } else if (rd == 0 && sd >= tpsty && sd < 1 && tg <= tpsty && sd < 1) {
